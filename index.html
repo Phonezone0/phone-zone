@@ -9,11 +9,7 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-body{
-background:#07131c;
-color:#fff;
-overflow-x:hidden;
-}
+body{background:#07131c;color:#fff;overflow-x:hidden}
 section{padding:70px 20px}
 h1,h2,h3{font-weight:600}
 p{color:#aaa;line-height:1.6}
@@ -29,22 +25,42 @@ position:sticky;
 top:0;
 z-index:1000;
 }
-.logo{
-display:flex;
-align-items:center;
-gap:10px;
-}
+
+.logo{display:flex;align-items:center;gap:10px}
 .logo-icon{
-width:38px;height:38px;
-border-radius:10px;
+width:38px;height:38px;border-radius:10px;
 background:linear-gradient(135deg,#19c463,#0f7a43);
+display:flex;align-items:center;justify-content:center;
+color:#000;font-size:18px;
+}
+
+.menu{
+font-size:26px;
+cursor:pointer;
+}
+
+/* NAV MENU */
+.nav-links{
+position:fixed;
+top:0;
+right:-100%;
+width:70%;
+height:100vh;
+background:#0f1f2a;
+padding:80px 25px;
+transition:.4s;
 display:flex;
-align-items:center;
-justify-content:center;
-color:#000;
+flex-direction:column;
+gap:20px;
+}
+
+.nav-links a{
+color:#fff;
+text-decoration:none;
 font-size:18px;
 }
-.menu{font-size:24px}
+
+.nav-links.active{right:0}
 
 /* HERO */
 .hero{
@@ -55,6 +71,7 @@ background-position:center;
 padding:100px 20px;
 text-align:center;
 }
+
 .badge{
 display:inline-block;
 background:#0f3f2a;
@@ -64,59 +81,60 @@ color:#19c463;
 font-size:13px;
 margin-bottom:15px;
 }
-.hero h1{
-font-size:30px;
-line-height:1.3;
-}
+
+.hero h1{font-size:30px;line-height:1.3}
 .hero h1 span{color:#19c463}
 .hero p{margin:15px 0}
 
 .btn{
-display:block;
-width:100%;
-padding:14px;
-border-radius:35px;
-text-align:center;
-text-decoration:none;
-font-weight:600;
-margin-top:15px;
+display:block;width:100%;
+padding:14px;border-radius:35px;
+text-align:center;text-decoration:none;
+font-weight:600;margin-top:15px;
 }
+
 .btn-green{
 background:linear-gradient(90deg,#19c463,#25e07b);
 color:#000;
 }
+
 .btn-dark{
-background:#1c2630;
-color:#fff;
-border:1px solid #333;
+background:#1c2630;color:#fff;border:1px solid #333;
 }
 
-/* STATS */
 .stats{
-display:flex;
-justify-content:space-between;
-margin-top:30px;
-text-align:center;
+display:flex;justify-content:space-between;
+margin-top:30px;text-align:center;
 }
-.stats div h3{color:#19c463}
 
-/* CARD */
-.card{
-background:#0f1f2a;
-border-radius:18px;
-padding:25px;
-margin-bottom:20px;
-}
+.stats h3{color:#19c463}
 
 /* PRODUCTS */
+.products-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
+.product{
+background:#0f1f2a;
+border-radius:18px;
+padding:20px;
+text-align:center;
+}
+
 .product img{
 width:100%;
-border-radius:15px;
+border-radius:12px;
+height:140px;
+object-fit:cover;
 }
+
 .price{
 color:#19c463;
-font-weight:600;
 margin:8px 0;
+font-weight:600;
 }
 
 /* MAP */
@@ -127,12 +145,18 @@ height:220px;
 border:0;
 }
 
-/* TESTIMONIAL */
+/* TESTIMONIALS */
+.testimonials{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+margin-top:30px;
+}
+
 .review{
 background:#0f1f2a;
 border-radius:15px;
 padding:20px;
-margin-bottom:15px;
 }
 
 /* FOOTER */
@@ -141,34 +165,23 @@ background:#081018;
 padding:40px 20px;
 color:#aaa;
 }
-footer a{
-display:block;
-color:#aaa;
-text-decoration:none;
-margin:6px 0;
-}
-footer a:hover{color:#19c463}
+
 .copy{
 text-align:center;
 margin-top:20px;
 font-size:12px;
 }
 
-/* FLOATING WHATSAPP */
+/* WHATSAPP */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
-width:60px;
-height:60px;
+width:60px;height:60px;
 border-radius:50%;
 background:linear-gradient(135deg,#19c463,#0f7a43);
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:26px;
-color:#000;
-text-decoration:none;
+display:flex;align-items:center;justify-content:center;
+font-size:26px;color:#000;text-decoration:none;
 box-shadow:0 8px 25px rgba(0,0,0,.4);
 }
 </style>
@@ -184,95 +197,116 @@ box-shadow:0 8px 25px rgba(0,0,0,.4);
 <small style="color:#19c463">Gaya, Bihar</small>
 </div>
 </div>
-<div class="menu">☰</div>
+<div class="menu" onclick="toggleMenu()">☰</div>
 </header>
 
+<div class="nav-links" id="navMenu">
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#location">Location</a>
+<a href="#reviews">Reviews</a>
+<a href="tel:9162414178">Call Now</a>
+</div>
+
 <section class="hero">
-<div class="badge">✨ Trusted Since Years in Gaya</div>
-<h1>Best Deals on <span>Second Hand Smartphones</span> in Gaya</h1>
-<p>Premium Quality Phones. Trusted Prices. Local Store You Can Rely On.</p>
+<div class="badge">✨ Trusted Store in Gaya</div>
+<h1>Best Deals on <span>Second Hand Smartphones</span></h1>
+<p>Premium Quality Phones at Affordable Prices</p>
 
 <a href="tel:9162414178" class="btn btn-green">📞 Call Now</a>
-<a href="https://www.google.com/maps/search/?api=1&query=Prem+Talkies+More+Gaya+Bihar" class="btn btn-dark">📍 Get Directions</a>
+<a href="https://wa.me/919162414178" class="btn btn-dark">💬 WhatsApp</a>
 
 <div class="stats">
 <div><h3>5000+</h3><small>Happy Customers</small></div>
-<div><h3>100%</h3><small>Quality Assured</small></div>
-<div><h3>Local</h3><small>Store in Gaya</small></div>
+<div><h3>100%</h3><small>Quality Checked</small></div>
+<div><h3>4.9⭐</h3><small>Rating</small></div>
 </div>
 </section>
 
-<section>
-<h2>Browse Our <span style="color:#19c463">Product Range</span></h2>
+<section id="products">
+<h2>Browse Our Products</h2>
 
-<div class="card product">
+<div class="products-grid">
+
+<div class="product">
 <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=800&auto=format&fit=crop">
 <h3>iPhone</h3>
-<div class="price">₹15,000 - ₹70,000</div>
-<a href="https://wa.me/919162414178" class="btn btn-green">Inquire Now</a>
+<div class="price">₹15,000+</div>
+<a href="https://wa.me/919162414178" class="btn btn-green">Inquire</a>
 </div>
 
-<div class="card product">
+<div class="product">
 <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=800&auto=format&fit=crop">
 <h3>Samsung</h3>
-<div class="price">₹8,000 - ₹50,000</div>
-<a href="https://wa.me/919162414178" class="btn btn-green">Inquire Now</a>
+<div class="price">₹8,000+</div>
+<a href="https://wa.me/919162414178" class="btn btn-green">Inquire</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1603899122634-f086ca5f5ddd?q=80&w=800&auto=format&fit=crop">
+<h3>Vivo</h3>
+<div class="price">₹7,000+</div>
+<a href="https://wa.me/919162414178" class="btn btn-green">Inquire</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd?q=80&w=800&auto=format&fit=crop">
+<h3>Oppo</h3>
+<div class="price">₹6,000+</div>
+<a href="https://wa.me/919162414178" class="btn btn-green">Inquire</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1616348436168-de43ad0db179?q=80&w=800&auto=format&fit=crop">
+<h3>Realme</h3>
+<div class="price">₹5,000+</div>
+<a href="https://wa.me/919162414178" class="btn btn-green">Inquire</a>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=800&auto=format&fit=crop">
+<h3>OnePlus</h3>
+<div class="price">₹10,000+</div>
+<a href="https://wa.me/919162414178" class="btn btn-green">Inquire</a>
+</div>
+
 </div>
 </section>
 
-<section>
-<h2>Visit Our Store Today</h2>
+<section id="reviews">
+<h2>Customer Reviews</h2>
+
+<div class="testimonials">
+
+<div class="review">⭐ ⭐ ⭐ ⭐ ⭐<p>Best mobile shop in Gaya.</p><strong>Rajesh Kumar</strong></div>
+<div class="review">⭐ ⭐ ⭐ ⭐ ⭐<p>Very genuine pricing.</p><strong>Priya Singh</strong></div>
+<div class="review">⭐ ⭐ ⭐ ⭐ ⭐<p>Phones condition was excellent.</p><strong>Amit Verma</strong></div>
+<div class="review">⭐ ⭐ ⭐ ⭐ ⭐<p>Highly recommended store.</p><strong>Neha Kumari</strong></div>
+<div class="review">⭐ ⭐ ⭐ ⭐ ⭐<p>Trusted seller and good support.</p><strong>Manish Yadav</strong></div>
+<div class="review">⭐ ⭐ ⭐ ⭐ ⭐<p>Affordable and quality phones.</p><strong>Sunita Devi</strong></div>
+
+</div>
+</section>
+
+<section id="location">
+<h2>Visit Our Store</h2>
 <iframe src="https://www.google.com/maps?q=Prem+Talkies+More+Gaya+Bihar&output=embed"></iframe>
-
-<div class="card">
-<h3>Our Address</h3>
-<p>Prem Talkies More, Shaheed Road, Dulhingunj, Gaya</p>
-</div>
-
-<a href="https://www.google.com/maps/search/?api=1&query=Prem+Talkies+More+Gaya+Bihar" class="btn btn-green">Get Directions</a>
-</section>
-
-<section>
-<h2>What Our Customers Say</h2>
-
-<div class="review">
-⭐ ⭐ ⭐ ⭐ ⭐  
-<p>"Best place to buy second-hand phones in Gaya."</p>
-<strong>Rajesh Kumar</strong>
-</div>
-
-<div class="review">
-⭐ ⭐ ⭐ ⭐ ⭐  
-<p>"Very genuine shop and great after sales support."</p>
-<strong>Priya Singh</strong>
-</div>
-</section>
-
-<section>
-<div class="card" style="text-align:center;background:linear-gradient(135deg,#19c463,#0f7a43);color:#000">
-<h2>Ready to Buy Your Phone?</h2>
-<p>Contact us today and get best deals.</p>
-<a href="tel:9162414178" class="btn btn-dark">91624 14178</a>
-</div>
 </section>
 
 <footer>
 <h3>Phone Zone</h3>
-<p>Your trusted destination for premium second-hand smartphones in Gaya.</p>
-
-<h4>Quick Links</h4>
-<a href="#">Home</a>
-<a href="#">About</a>
-<a href="#">Products</a>
-<a href="#">Location</a>
-<a href="#">Contact</a>
-
-<div class="copy">
-© 2026 Phone Zone. All rights reserved.
-</div>
+<p>Prem Talkies More, Gaya, Bihar</p>
+<p>📞 91624 14178</p>
+<div class="copy">© 2026 Phone Zone. All Rights Reserved.</div>
 </footer>
 
 <a href="https://wa.me/919162414178" class="whatsapp" target="_blank">💬</a>
+
+<script>
+function toggleMenu(){
+document.getElementById("navMenu").classList.toggle("active");
+}
+</script>
 
 </body>
 </html>
