@@ -4,199 +4,238 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phone Zone | Second Hand Mobile Shop in Gaya</title>
+<meta name="description" content="Phone Zone - Best Second Hand Mobile Shop in Gaya. Quality checked used smartphones at affordable prices. Visit us today.">
 
-<meta name="description" content="Phone Zone - Best Second Hand Mobile Shop in Gaya. Affordable, Quality Checked Smartphones. Visit us at Prem Talkies More, Shaheed Road, Dulhingunj, Gaya.">
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+html{scroll-behavior:smooth}
+body{background:#0f0f0f;color:white}
+
+/* LOADER */
+#loader{
+position:fixed;
+width:100%;
+height:100%;
+background:#0f0f0f;
+display:flex;
+justify-content:center;
+align-items:center;
+z-index:2000;
+flex-direction:column;
 }
 
-body{
-    background:#0f0f0f;
-    color:white;
-    scroll-behavior:smooth;
+.loader-circle{
+width:60px;
+height:60px;
+border:5px solid #222;
+border-top:5px solid #00ff88;
+border-radius:50%;
+animation:spin 1s linear infinite;
 }
 
+@keyframes spin{
+100%{transform:rotate(360deg)}
+}
+
+/* HEADER */
 header{
-    position:fixed;
-    width:100%;
-    top:0;
-    background:rgba(0,0,0,0.8);
-    backdrop-filter:blur(10px);
-    padding:15px 8%;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    z-index:1000;
+position:fixed;
+top:0;
+width:100%;
+padding:15px 8%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+z-index:1000;
 }
 
-header h2{
-    color:#00ff88;
-}
+header h2{color:#00ff88}
+nav a{color:white;text-decoration:none;margin-left:20px;transition:0.3s}
+nav a:hover{color:#00ff88}
 
-nav a{
-    color:white;
-    margin-left:20px;
-    text-decoration:none;
-    font-weight:500;
-}
-
-nav a:hover{
-    color:#00ff88;
-}
-
+/* HERO */
 .hero{
-    height:100vh;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    align-items:center;
-    text-align:center;
-    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
-    url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9');
-    background-size:cover;
-    background-position:center;
-    padding:20px;
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding:20px;
+background:linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url('https://images.unsplash.com/photo-1510557880182-3d4d3caa2f1a');
+background-size:cover;
+background-position:center;
 }
 
-.hero h1{
-    font-size:3rem;
-    font-weight:800;
-}
-
-.hero p{
-    margin-top:15px;
-    max-width:600px;
-}
+.hero h1{font-size:3rem;font-weight:800;max-width:800px}
+.hero p{margin-top:15px;color:#ccc;max-width:600px}
 
 .btn{
-    margin-top:25px;
-    padding:12px 30px;
-    border:none;
-    border-radius:30px;
-    background:#00ff88;
-    color:black;
-    font-weight:600;
-    cursor:pointer;
-    margin-right:10px;
-    text-decoration:none;
+display:inline-block;
+margin:20px 10px 0;
+padding:12px 30px;
+border-radius:30px;
+text-decoration:none;
+font-weight:600;
+transition:0.3s;
 }
 
-section{
-    padding:80px 8%;
+.primary{
+background:#00ff88;
+color:black;
+box-shadow:0 0 15px #00ff88;
 }
+.primary:hover{transform:translateY(-3px);box-shadow:0 0 25px #00ff88}
 
-.section-title{
-    font-size:2rem;
-    margin-bottom:40px;
-    text-align:center;
-    color:#00ff88;
+.secondary{
+border:2px solid #00ff88;
+color:#00ff88;
 }
+.secondary:hover{background:#00ff88;color:black}
+
+/* SECTIONS */
+section{padding:90px 8%}
+.section-title{text-align:center;font-size:2rem;margin-bottom:40px;color:#00ff88}
+
+.glass{
+background:rgba(255,255,255,0.05);
+border:1px solid rgba(255,255,255,0.1);
+border-radius:15px;
+padding:25px;
+backdrop-filter:blur(10px);
+transition:0.3s;
+}
+.glass:hover{transform:translateY(-10px);box-shadow:0 0 20px rgba(0,255,136,0.3)}
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
 }
 
-.card{
-    background:#1c1c1c;
-    padding:20px;
-    border-radius:15px;
-    text-align:center;
-    transition:0.3s;
-}
+.product img{width:100%;border-radius:10px;margin-bottom:10px}
 
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card img{
-    width:100%;
-    border-radius:10px;
-}
+.stars{color:#00ff88;margin-bottom:10px}
 
 footer{
-    background:#000;
-    text-align:center;
-    padding:30px;
-    font-size:14px;
+background:#000;
+padding:40px 8%;
+text-align:center;
+border-top:1px solid #222;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp-float{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+width:60px;
+height:60px;
+border-radius:50%;
+display:flex;
+justify-content:center;
+align-items:center;
+font-size:28px;
+text-decoration:none;
+box-shadow:0 0 15px #25D366;
+z-index:1500;
+transition:0.3s;
+}
+.whatsapp-float:hover{
+transform:scale(1.1);
+box-shadow:0 0 25px #25D366;
+}
+
+@media(max-width:768px){
+.hero h1{font-size:2rem}
 }
 </style>
 </head>
 
 <body>
 
+<!-- LOADING SCREEN -->
+<div id="loader">
+<div class="loader-circle"></div>
+<p style="margin-top:15px;color:#00ff88;">Loading Phone Zone...</p>
+</div>
+
 <header>
-    <h2>Phone Zone</h2>
-    <nav>
-        <a href="#about">About</a>
-        <a href="#products">Products</a>
-        <a href="#contact">Contact</a>
-    </nav>
+<h2>Phone Zone</h2>
+<nav>
+<a href="#about">About</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
 <div class="hero">
-    <h1>Best Deals on Second Hand Smartphones in Gaya</h1>
-    <p>Premium Quality Phones. Trusted Prices. Local Store You Can Rely On.</p>
-    <div>
-        <a href="tel:9162414178" class="btn">Call Now</a>
-        <a href="#contact" class="btn">Visit Store</a>
-    </div>
+<h1>Best Deals on Second Hand Smartphones in Gaya</h1>
+<p>Premium Quality Phones. Trusted Prices. Local Store You Can Rely On.</p>
+<div>
+<a href="tel:9162414178" class="btn primary">Call Now</a>
+<a href="https://www.google.com/maps/search/?api=1&query=Prem+Talkies+More+Gaya+Bihar" target="_blank" class="btn secondary">Get Directions</a>
+</div>
 </div>
 
 <section id="about">
-    <h2 class="section-title">About Phone Zone</h2>
-    <p style="text-align:center;max-width:800px;margin:auto;">
-        Phone Zone is a trusted second hand mobile shop located at Prem Talkies More, Shaheed Road, Dulhingunj, Gaya. 
-        We provide quality-checked smartphones at affordable prices with honest dealing and instant support.
-    </p>
+<h2 class="section-title">About Phone Zone</h2>
+<div class="glass">
+<p>Trusted local mobile shop in Gaya offering quality checked second hand smartphones at honest prices.</p>
+</div>
 </section>
 
 <section id="products">
-    <h2 class="section-title">Our Available Brands</h2>
-    <div class="grid">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
-            <h3>iPhone</h3>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf">
-            <h3>Samsung</h3>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505">
-            <h3>Vivo</h3>
-        </div>
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97">
-            <h3>Oppo</h3>
-        </div>
-    </div>
+<h2 class="section-title">Available Brands</h2>
+<div class="grid">
+<div class="glass product">
+<img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
+<h3>iPhone</h3>
+<p>Starting ₹9,999</p>
+</div>
+<div class="glass product">
+<img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf">
+<h3>Samsung</h3>
+<p>Starting ₹6,999</p>
+</div>
+<div class="glass product">
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505">
+<h3>Vivo</h3>
+<p>Starting ₹5,499</p>
+</div>
+</div>
 </section>
 
 <section id="contact">
-    <h2 class="section-title">Visit Our Store</h2>
-    <p style="text-align:center;">
-        Prem Talkies More, Shaheed Road, Dulhingunj, Gaya, Bihar 823001
-    </p>
-    <p style="text-align:center;margin-top:10px;">
-        📞 91624 14178
-    </p>
-    <div style="text-align:center;margin-top:20px;">
-        <a href="https://wa.me/919162414178" class="btn">WhatsApp Us</a>
-    </div>
+<h2 class="section-title">Visit Our Store Today</h2>
+<div class="glass" style="text-align:center;">
+<p>Prem Talkies More, Shaheed Road, Dulhingunj, Gaya, Bihar 823001</p>
+<p>Store Timings: 10AM – 9PM</p>
+
+<a href="tel:9162414178" class="btn primary">📞 Call Now</a>
+<a href="https://wa.me/919162414178" class="btn secondary">💬 WhatsApp</a>
+</div>
 </section>
 
 <footer>
-    © 2026 Phone Zone | Second Hand Mobile Shop in Gaya
+<p>© 2026 Phone Zone | Second Hand Mobile Shop in Gaya</p>
 </footer>
+
+<!-- FLOATING WHATSAPP BUTTON -->
+<a href="https://wa.me/919162414178" class="whatsapp-float" target="_blank">💬</a>
+
+<script>
+window.addEventListener("load", function(){
+document.getElementById("loader").style.display="none";
+});
+</script>
 
 </body>
 </html>
