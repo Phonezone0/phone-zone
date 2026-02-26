@@ -1,48 +1,116 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Phone Zone</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
     body {
-      margin:0;
-      font-family: Arial;
-      background:#0f172a;
-      color:white;
-      text-align:center;
+      background: #0b1a2b;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
     }
-    .box {
-      background:#16a34a;
-      padding:20px;
-      margin:20px;
-      border-radius:15px;
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      padding: 20px;
     }
-    a {
-      color:white;
-      text-decoration:none;
-      font-size:18px;
+
+    .card {
+      text-align: center;
     }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.8;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: #1fa84f;
+      border-radius: 20px;
+      padding: 22px;
+      margin-bottom: 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.03);
+    }
+
+    .btn h2 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
+
+    .btn p {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
   </style>
 </head>
+
 <body>
+  <div class="container">
+    <div class="card">
 
-<h1>Phone Zone</h1>
-<p>Second Hand Mobile Shop - Gaya, Bihar</p>
+      <h1>Phone Zone</h1>
+      <div class="subtitle">Second Hand Mobile Shop - Gaya, Bihar</div>
 
-<div class="box">
-  <h2>Call Us</h2>
-  <a href="tel:9162414178">91624 14178</a>
-</div>
+      <!-- Call Button -->
+      <div class="btn" onclick="callNow()">
+        <h2>Call Us</h2>
+        <p>91624 14178</p>
+      </div>
 
-<div class="box">
-  <h2>WhatsApp</h2>
-  <a href="https://wa.me/9162414178">Chat on WhatsApp</a>
-</div>
+      <!-- WhatsApp Button -->
+      <div class="btn" onclick="openWhatsApp()">
+        <h2>WhatsApp</h2>
+        <p>Chat on WhatsApp</p>
+      </div>
 
-<div class="box">
-  <h2>Opening Hours</h2>
-  <p>10:00 AM - 8:00 PM</p>
-</div>
+      <!-- Timing -->
+      <div class="btn">
+        <h2>Opening Hours</h2>
+        <p>10:00 AM - 8:00 PM</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script>
+    function callNow() {
+      window.location.href = "tel:9162414178";
+    }
+
+    function openWhatsApp() {
+      window.open("https://wa.me/919162414178", "_blank");
+    }
+  </script>
 
 </body>
 </html>
