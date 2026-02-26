@@ -3,15 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phone Zone | Gaya, Bihar</title>
+<title>Phone Zone | Premium Second Hand Mobile Shop in Gaya</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{
-background:linear-gradient(180deg,#07121b,#0c1f2e,#000);
+background:linear-gradient(180deg,#06141f,#0b2232,#000);
 color:#fff;
+overflow-x:hidden;
 }
 
 /* HEADER */
@@ -20,78 +21,97 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:18px 20px;
-background:#000;
+background:rgba(0,0,0,0.8);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,0.05);
 }
 .logo{
 display:flex;
 align-items:center;
-gap:10px;
+gap:12px;
 }
 .logo-box{
-background:#1ecb70;
-width:38px;
-height:38px;
-border-radius:10px;
+background:linear-gradient(135deg,#19c463,#0f7a43);
+width:40px;
+height:40px;
+border-radius:12px;
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:18px;
+font-size:20px;
 color:#000;
 }
-.logo h2{font-size:18px;}
+.logo h2{font-size:18px;font-weight:600;}
 .logo span{font-size:12px;color:#1ecb70;}
-.menu{font-size:22px;}
+.menu{font-size:22px;opacity:.8}
 
 /* SECTION */
-section{padding:40px 20px;}
+section{padding:60px 20px;}
 .section-title{
 text-align:center;
-font-size:22px;
-margin-bottom:20px;
+font-size:24px;
+margin-bottom:25px;
 }
 .green{color:#1ecb70}
 
-/* CARD */
-.card{
-background:linear-gradient(145deg,#0e2534,#081923);
-border-radius:18px;
-padding:25px;
-margin-bottom:25px;
-box-shadow:0 10px 30px rgba(0,0,0,.4);
+/* HERO CARD */
+.hero-card{
+background:linear-gradient(145deg,rgba(20,40,55,.8),rgba(10,25,35,.8));
+backdrop-filter:blur(10px);
+border-radius:22px;
+padding:35px 25px;
+text-align:center;
+box-shadow:0 15px 40px rgba(0,0,0,.5);
+animation:fadeUp 1s ease;
+}
+.hero-card p{
+margin-top:12px;
+color:#ccc;
+font-size:14px;
 }
 
 /* BUTTON */
 .btn{
-display:block;
+display:inline-block;
 width:100%;
 padding:14px;
-border-radius:30px;
+border-radius:35px;
 text-align:center;
 text-decoration:none;
 font-weight:600;
-margin-top:15px;
+margin-top:18px;
 transition:.3s;
+letter-spacing:.3px;
 }
 .btn-green{
 background:linear-gradient(90deg,#19c463,#25e07b);
 color:#000;
+box-shadow:0 8px 20px rgba(25,196,99,.3);
 }
-.btn-green:hover{opacity:.85}
+.btn-green:hover{
+transform:translateY(-2px);
+box-shadow:0 12px 25px rgba(25,196,99,.4);
+}
 
 /* MAP */
 .map{
 width:100%;
-border-radius:15px;
+border-radius:20px;
 overflow:hidden;
-margin-bottom:20px;
+margin-bottom:25px;
+box-shadow:0 15px 30px rgba(0,0,0,.5);
 }
 
 /* INFO BOX */
 .info-box{
-background:#0b1d29;
-border-radius:15px;
-padding:18px;
-margin-bottom:15px;
+background:rgba(15,35,50,.8);
+border-radius:18px;
+padding:20px;
+margin-bottom:18px;
+border:1px solid rgba(255,255,255,0.05);
 }
 .info-box h4{
 margin-bottom:6px;
@@ -102,25 +122,32 @@ font-size:14px;
 /* CONTACT CARDS */
 .contact-card{
 background:linear-gradient(135deg,#19c463,#0f7a43);
-border-radius:18px;
-padding:22px;
-margin-bottom:20px;
+border-radius:22px;
+padding:25px;
+margin-bottom:22px;
 color:#000;
+box-shadow:0 15px 35px rgba(0,0,0,.4);
+transition:.3s;
 }
-.contact-card h3{margin-bottom:8px;}
+.contact-card:hover{
+transform:translateY(-5px);
+}
+.contact-card h3{margin-bottom:6px;}
 
 /* FOOTER */
 footer{
 background:#000;
-padding:30px 20px;
+padding:40px 20px;
 font-size:14px;
 color:#aaa;
+border-top:1px solid rgba(255,255,255,.05);
 }
 .footer-links a{
 display:block;
 color:#aaa;
 text-decoration:none;
 margin:6px 0;
+transition:.3s;
 }
 .footer-links a:hover{color:#1ecb70}
 .social{
@@ -128,42 +155,58 @@ margin-top:20px;
 }
 .social span{
 display:inline-block;
-width:35px;
-height:35px;
-border-radius:8px;
+width:38px;
+height:38px;
+border-radius:10px;
 background:#111;
-margin-right:8px;
-line-height:35px;
+margin-right:10px;
+line-height:38px;
 text-align:center;
+transition:.3s;
+}
+.social span:hover{
+background:#1ecb70;
+color:#000;
 }
 .copyright{
-margin-top:20px;
+margin-top:25px;
 text-align:center;
 font-size:12px;
+color:#666;
 }
 
 /* FLOATING WHATSAPP */
 .whatsapp-float{
 position:fixed;
-bottom:20px;
-right:20px;
-width:55px;
-height:55px;
+bottom:22px;
+right:22px;
+width:60px;
+height:60px;
 border-radius:50%;
 background:linear-gradient(135deg,#19c463,#0f7a43);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:24px;
+font-size:26px;
 color:#000;
 text-decoration:none;
-box-shadow:0 8px 25px rgba(0,0,0,.4);
+box-shadow:0 10px 30px rgba(25,196,99,.4);
 z-index:999;
 transition:.3s;
+animation:float 3s ease-in-out infinite;
 }
 .whatsapp-float:hover{
-transform:scale(1.08);
-opacity:.9;
+transform:scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeUp{
+from{opacity:0;transform:translateY(20px)}
+to{opacity:1;transform:translateY(0)}
+}
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
 }
 </style>
 </head>
@@ -182,11 +225,9 @@ opacity:.9;
 </header>
 
 <section>
-<div class="card" style="text-align:center;">
+<div class="hero-card">
 <h2>Have Questions? We're Here to Help!</h2>
-<p style="margin-top:10px;color:#ccc;font-size:14px;">
-Call or WhatsApp us for price details and availability.
-</p>
+<p>Call or WhatsApp us for price details and availability of premium second-hand smartphones.</p>
 
 <a href="tel:9162414178" class="btn btn-green">📞 Call Now</a>
 <a href="https://wa.me/919162414178" class="btn btn-green">💬 WhatsApp</a>
@@ -199,7 +240,7 @@ Call or WhatsApp us for price details and availability.
 <div class="map">
 <iframe 
 src="https://www.google.com/maps?q=Prem+Talkies+More+Gaya+Bihar&output=embed" 
-width="100%" height="200" style="border:0;" allowfullscreen="">
+width="100%" height="220" style="border:0;" allowfullscreen="">
 </iframe>
 </div>
 
@@ -257,11 +298,10 @@ Mon-Sun: 10:00 AM – 9:00 PM
 </div>
 </footer>
 
-<!-- Floating WhatsApp Button -->
 <a href="https://wa.me/919162414178" 
-   class="whatsapp-float" 
-   target="_blank">
-   💬
+class="whatsapp-float" 
+target="_blank">
+💬
 </a>
 
 </body>
