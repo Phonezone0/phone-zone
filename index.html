@@ -1,116 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Phone Zone</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Phone Zone | Second Hand Mobile Shop in Gaya</title>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<meta name="description" content="Phone Zone - Best Second Hand Mobile Shop in Gaya. Affordable, Quality Checked Smartphones. Visit us at Prem Talkies More, Shaheed Road, Dulhingunj, Gaya.">
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
-    body {
-      background: #0b1a2b;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 100vh;
-    }
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
 
-    .container {
-      width: 100%;
-      max-width: 420px;
-      padding: 20px;
-    }
+body{
+    background:#0f0f0f;
+    color:white;
+    scroll-behavior:smooth;
+}
 
-    .card {
-      text-align: center;
-    }
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    background:rgba(0,0,0,0.8);
+    backdrop-filter:blur(10px);
+    padding:15px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:1000;
+}
 
-    h1 {
-      font-size: 32px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
+header h2{
+    color:#00ff88;
+}
 
-    .subtitle {
-      font-size: 14px;
-      opacity: 0.8;
-      margin-bottom: 30px;
-    }
+nav a{
+    color:white;
+    margin-left:20px;
+    text-decoration:none;
+    font-weight:500;
+}
 
-    .btn {
-      background: #1fa84f;
-      border-radius: 20px;
-      padding: 22px;
-      margin-bottom: 20px;
-      text-align: center;
-      cursor: pointer;
-      transition: 0.3s;
-    }
+nav a:hover{
+    color:#00ff88;
+}
 
-    .btn:hover {
-      transform: scale(1.03);
-    }
+.hero{
+    height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)),
+    url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9');
+    background-size:cover;
+    background-position:center;
+    padding:20px;
+}
 
-    .btn h2 {
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
+.hero h1{
+    font-size:3rem;
+    font-weight:800;
+}
 
-    .btn p {
-      font-size: 16px;
-      opacity: 0.9;
-    }
+.hero p{
+    margin-top:15px;
+    max-width:600px;
+}
 
-  </style>
+.btn{
+    margin-top:25px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:#00ff88;
+    color:black;
+    font-weight:600;
+    cursor:pointer;
+    margin-right:10px;
+    text-decoration:none;
+}
+
+section{
+    padding:80px 8%;
+}
+
+.section-title{
+    font-size:2rem;
+    margin-bottom:40px;
+    text-align:center;
+    color:#00ff88;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:15px;
+    text-align:center;
+    transition:0.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card img{
+    width:100%;
+    border-radius:10px;
+}
+
+footer{
+    background:#000;
+    text-align:center;
+    padding:30px;
+    font-size:14px;
+}
+</style>
 </head>
 
 <body>
-  <div class="container">
-    <div class="card">
 
-      <h1>Phone Zone</h1>
-      <div class="subtitle">Second Hand Mobile Shop - Gaya, Bihar</div>
+<header>
+    <h2>Phone Zone</h2>
+    <nav>
+        <a href="#about">About</a>
+        <a href="#products">Products</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
 
-      <!-- Call Button -->
-      <div class="btn" onclick="callNow()">
-        <h2>Call Us</h2>
-        <p>91624 14178</p>
-      </div>
-
-      <!-- WhatsApp Button -->
-      <div class="btn" onclick="openWhatsApp()">
-        <h2>WhatsApp</h2>
-        <p>Chat on WhatsApp</p>
-      </div>
-
-      <!-- Timing -->
-      <div class="btn">
-        <h2>Opening Hours</h2>
-        <p>10:00 AM - 8:00 PM</p>
-      </div>
-
+<div class="hero">
+    <h1>Best Deals on Second Hand Smartphones in Gaya</h1>
+    <p>Premium Quality Phones. Trusted Prices. Local Store You Can Rely On.</p>
+    <div>
+        <a href="tel:9162414178" class="btn">Call Now</a>
+        <a href="#contact" class="btn">Visit Store</a>
     </div>
-  </div>
+</div>
 
-  <script>
-    function callNow() {
-      window.location.href = "tel:9162414178";
-    }
+<section id="about">
+    <h2 class="section-title">About Phone Zone</h2>
+    <p style="text-align:center;max-width:800px;margin:auto;">
+        Phone Zone is a trusted second hand mobile shop located at Prem Talkies More, Shaheed Road, Dulhingunj, Gaya. 
+        We provide quality-checked smartphones at affordable prices with honest dealing and instant support.
+    </p>
+</section>
 
-    function openWhatsApp() {
-      window.open("https://wa.me/919162414178", "_blank");
-    }
-  </script>
+<section id="products">
+    <h2 class="section-title">Our Available Brands</h2>
+    <div class="grid">
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7">
+            <h3>iPhone</h3>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf">
+            <h3>Samsung</h3>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1580910051074-3eb694886505">
+            <h3>Vivo</h3>
+        </div>
+        <div class="card">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97">
+            <h3>Oppo</h3>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <h2 class="section-title">Visit Our Store</h2>
+    <p style="text-align:center;">
+        Prem Talkies More, Shaheed Road, Dulhingunj, Gaya, Bihar 823001
+    </p>
+    <p style="text-align:center;margin-top:10px;">
+        📞 91624 14178
+    </p>
+    <div style="text-align:center;margin-top:20px;">
+        <a href="https://wa.me/919162414178" class="btn">WhatsApp Us</a>
+    </div>
+</section>
+
+<footer>
+    © 2026 Phone Zone | Second Hand Mobile Shop in Gaya
+</footer>
 
 </body>
 </html>
