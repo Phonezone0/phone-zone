@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phone Zone | Premium Second-Hand Smartphones in Gaya</title>
+<title>Phone Zone | Premium Smartphones in Gaya</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
@@ -13,7 +13,6 @@
 --green:#00f28a;
 --dark:#050914;
 --card:#0c1629;
---soft:#111a2d;
 }
 
 *{
@@ -27,6 +26,7 @@ scroll-behavior:smooth;
 body{
 background:var(--dark);
 color:#fff;
+overflow-x:hidden;
 }
 
 .container{
@@ -35,12 +35,14 @@ max-width:1200px;
 margin:auto;
 }
 
+/* HEADER */
 header{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 0;
 position:relative;
+z-index:1001;
 }
 
 .logo{
@@ -54,19 +56,14 @@ background:var(--green);
 color:#000;
 padding:10px;
 border-radius:12px;
-font-size:18px;
 }
 
-.logo h2{
-font-size:20px;
-font-weight:700;
+.hamburger{
+font-size:26px;
+cursor:pointer;
 }
 
-.logo span{
-color:var(--green);
-font-size:12px;
-}
-
+/* MOBILE MENU */
 nav{
 position:fixed;
 top:0;
@@ -87,26 +84,41 @@ nav a{
 display:block;
 color:#fff;
 text-decoration:none;
-margin:18px 0;
+margin:20px 0;
 font-weight:500;
 }
 
-.hamburger{
-font-size:24px;
-cursor:pointer;
+.overlay{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,.6);
+opacity:0;
+visibility:hidden;
+transition:.3s;
+z-index:999;
 }
 
-section{
-padding:80px 0;
+.overlay.active{
+opacity:1;
+visibility:visible;
 }
 
+/* HERO */
 .hero{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
 text-align:center;
-background:radial-gradient(circle at top right,#0c1b2f 0%,#050914 60%);
+background:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9') center/cover no-repeat;
 }
 
 .hero h1{
-font-size:36px;
+font-size:38px;
 font-weight:800;
 line-height:1.3;
 }
@@ -117,47 +129,36 @@ color:var(--green);
 
 .hero p{
 margin-top:15px;
-opacity:.8;
+opacity:.9;
 }
 
 .btn{
 display:inline-flex;
 align-items:center;
 justify-content:center;
-gap:10px;
+gap:8px;
 padding:14px 28px;
 border-radius:50px;
 font-weight:600;
 text-decoration:none;
-margin:15px 10px 0;
+margin:20px 10px 0;
 transition:.3s;
 }
 
 .btn-green{
 background:var(--green);
 color:#000;
-box-shadow:0 0 20px rgba(0,242,138,.4);
 }
 
 .btn-dark{
-background:#0f1b30;
+background:#111;
 border:1px solid var(--green);
 color:var(--green);
 }
 
-.grid{
-display:grid;
-gap:25px;
-}
-
-.grid-3{
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-}
-
-.card{
-background:var(--card);
-padding:25px;
-border-radius:20px;
+/* SECTIONS */
+section{
+padding:80px 0;
 }
 
 .section-title{
@@ -166,7 +167,7 @@ margin-bottom:50px;
 }
 
 .section-title h2{
-font-size:28px;
+font-size:30px;
 font-weight:800;
 }
 
@@ -174,14 +175,51 @@ font-weight:800;
 color:var(--green);
 }
 
+.grid{
+display:grid;
+gap:25px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+}
+
+.card{
+background:var(--card);
+padding:25px;
+border-radius:20px;
+transition:.3s;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:180px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+}
+
+/* WHY CHOOSE */
+.icon-box{
+text-align:center;
+}
+
+.icon-box i{
+font-size:30px;
+color:var(--green);
+margin-bottom:15px;
+}
+
+/* FOOTER */
 footer{
 background:#08101d;
 padding:40px 0;
 text-align:center;
-margin-top:40px;
 opacity:.7;
 }
 
+/* WHATSAPP FLOAT */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
@@ -196,7 +234,7 @@ justify-content:center;
 color:#fff;
 font-size:28px;
 box-shadow:0 8px 20px rgba(0,0,0,.4);
-z-index:999;
+z-index:1002;
 text-decoration:none;
 }
 </style>
@@ -207,27 +245,28 @@ text-decoration:none;
 <header>
 <div class="logo">
 <div class="logo-icon"><i class="fa fa-phone"></i></div>
-<div>
 <h2>Phone Zone</h2>
-<span>Gaya, Bihar</span>
 </div>
-</div>
+
 <div class="hamburger" onclick="toggleMenu()">
-<i class="fa fa-bars"></i>
+<i id="menuIcon" class="fa fa-bars"></i>
 </div>
 </header>
 </div>
 
+<div class="overlay" id="overlay" onclick="closeMenu()"></div>
+
 <nav id="menu">
-<a href="#home">Home</a>
-<a href="#about">About</a>
-<a href="#products">Products</a>
-<a href="#location">Location</a>
-<a href="#contact">Contact</a>
+<a href="#home" onclick="closeMenu()">Home</a>
+<a href="#about" onclick="closeMenu()">About</a>
+<a href="#products" onclick="closeMenu()">Products</a>
+<a href="#why" onclick="closeMenu()">Why Choose Us</a>
+<a href="#contact" onclick="closeMenu()">Contact</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
-<div class="container">
+<div>
 <h1>Best Deals on <span>Second Hand Smartphones</span> in Gaya</h1>
 <p>Premium Quality Phones. Honest Pricing. Trusted Local Store.</p>
 <a href="tel:9162414178" class="btn btn-green"><i class="fa fa-phone"></i> Call Now</a>
@@ -235,88 +274,119 @@ text-decoration:none;
 </div>
 </section>
 
+<!-- ABOUT -->
 <section id="about">
 <div class="container">
 <div class="section-title">
 <h2>Your Trusted <span>Mobile Shop</span></h2>
 </div>
-<div class="grid grid-3">
-<div class="card">
-<h4>Quality Checked</h4>
-<p>Every smartphone is thoroughly inspected before sale.</p>
-</div>
-<div class="card">
-<h4>Honest Pricing</h4>
-<p>No hidden costs. Transparent and fair deals always.</p>
-</div>
-<div class="card">
-<h4>Trusted Brand</h4>
-<p>Years of experience serving customers in Gaya.</p>
-</div>
-</div>
+<p style="text-align:center;max-width:700px;margin:auto;opacity:.8;">
+At Phone Zone, we specialize in certified second-hand smartphones with warranty assurance and honest pricing.
+</p>
 </div>
 </section>
 
+<!-- PRODUCTS -->
 <section id="products">
 <div class="container">
 <div class="section-title">
 <h2>Our <span>Products</span></h2>
 </div>
-<div class="grid grid-3">
+
+<div class="grid">
 <div class="card">
-<h4>Apple Devices</h4>
+<img src="https://images.unsplash.com/photo-1603899122881-0d9b5d6bfe44" alt="">
+<h4>Apple iPhones</h4>
 <p>₹15,000 - ₹70,000</p>
-<a href="https://wa.me/919162414178" target="_blank" class="btn btn-green">Inquire</a>
+<a href="https://wa.me/919162414178" class="btn btn-green" target="_blank">Inquire</a>
 </div>
+
 <div class="card">
-<h4>Samsung Phones</h4>
+<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505" alt="">
+<h4>Samsung Galaxy</h4>
 <p>₹18,000 - ₹50,000</p>
-<a href="https://wa.me/919162414178" target="_blank" class="btn btn-green">Inquire</a>
+<a href="https://wa.me/919162414178" class="btn btn-green" target="_blank">Inquire</a>
 </div>
+
 <div class="card">
+<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97" alt="">
 <h4>Vivo & Oppo</h4>
 <p>₹10,000 - ₹30,000</p>
-<a href="https://wa.me/919162414178" target="_blank" class="btn btn-green">Inquire</a>
+<a href="https://wa.me/919162414178" class="btn btn-green" target="_blank">Inquire</a>
 </div>
 </div>
 </div>
 </section>
 
-<section id="location">
+<!-- WHY CHOOSE -->
+<section id="why">
 <div class="container">
 <div class="section-title">
-<h2>Visit Our <span>Store</span></h2>
+<h2>Why <span>Choose Us</span></h2>
 </div>
-<iframe src="https://maps.google.com/maps?q=Prem%20Talkies%20More%20Gaya&t=&z=15&ie=UTF8&iwloc=&output=embed" width="100%" height="250" style="border-radius:20px;border:none;"></iframe>
+
+<div class="grid">
+<div class="card icon-box">
+<i class="fa fa-check-circle"></i>
+<h4>Verified Devices</h4>
+<p>All phones tested for quality performance.</p>
+</div>
+
+<div class="card icon-box">
+<i class="fa fa-tags"></i>
+<h4>Budget Friendly</h4>
+<p>Best prices in Gaya market.</p>
+</div>
+
+<div class="card icon-box">
+<i class="fa fa-store"></i>
+<h4>Physical Store</h4>
+<p>Visit us anytime for direct purchase.</p>
+</div>
+</div>
 </div>
 </section>
 
+<!-- CONTACT -->
 <section id="contact">
 <div class="container">
 <div class="section-title">
-<h2>Get In <span>Touch</span></h2>
+<h2>Contact <span>Us</span></h2>
 </div>
-<div class="card">
+
+<div class="card" style="text-align:center;">
 <p><strong>Phone:</strong> 9162414178</p>
-<p><strong>Address:</strong> Prem Talkies More, Shaheed Road, Dulhingunj, Gaya, Bihar</p>
-<p><strong>Timing:</strong> 10:00 AM - 9:00 PM</p>
+<p><strong>Location:</strong> Prem Talkies More, Gaya</p>
+<p><strong>Timing:</strong> 10AM - 9PM</p>
 <a href="tel:9162414178" class="btn btn-green">Call Now</a>
-<a href="https://wa.me/919162414178" target="_blank" class="btn btn-dark">WhatsApp</a>
+<a href="https://wa.me/919162414178" class="btn btn-dark" target="_blank">WhatsApp</a>
 </div>
 </div>
 </section>
 
 <footer>
-© 2026 Phone Zone | All Rights Reserved  
+© 2026 Phone Zone | All Rights Reserved
 </footer>
 
-<a href="https://wa.me/919162414178" target="_blank" class="whatsapp-float">
+<a href="https://wa.me/919162414178" class="whatsapp-float" target="_blank">
 <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
 function toggleMenu(){
 document.getElementById("menu").classList.toggle("active");
+document.getElementById("overlay").classList.toggle("active");
+let icon=document.getElementById("menuIcon");
+icon.classList.toggle("fa-bars");
+icon.classList.toggle("fa-times");
+}
+
+function closeMenu(){
+document.getElementById("menu").classList.remove("active");
+document.getElementById("overlay").classList.remove("active");
+let icon=document.getElementById("menuIcon");
+icon.classList.add("fa-bars");
+icon.classList.remove("fa-times");
 }
 </script>
 
