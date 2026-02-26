@@ -3,141 +3,143 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phone Zone | Second Hand Mobile Shop in Gaya</title>
-<meta name="description" content="Phone Zone - Trusted Second Hand Mobile Shop in Gaya. Quality checked used smartphones at affordable prices. Visit today.">
+<title>Phone Zone | Gaya, Bihar</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
-html{scroll-behavior:smooth}
-body{background:#111;color:#eee}
-
-/* LOADER */
-#loader{
-position:fixed;
-width:100%;
-height:100%;
-background:#111;
-display:flex;
-justify-content:center;
-align-items:center;
-z-index:2000;
-transition:opacity .5s ease;
-}
-.loader-dot{
-width:40px;height:40px;
-border-radius:50%;
-background:#2ecc71;
-animation:pulse 1s infinite alternate;
-}
-@keyframes pulse{
-from{transform:scale(.8);opacity:.6}
-to{transform:scale(1.2);opacity:1}
+body{
+background:linear-gradient(180deg,#07121b,#0c1f2e,#000);
+color:#fff;
 }
 
 /* HEADER */
 header{
-position:fixed;
-top:0;
-width:100%;
-padding:15px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(0,0,0,0.7);
-backdrop-filter:blur(8px);
-z-index:1000;
+padding:18px 20px;
+background:#000;
 }
-header h2{color:#2ecc71;font-weight:600}
-nav a{
-color:#eee;
-text-decoration:none;
-margin-left:20px;
-font-size:14px;
-}
-nav a:hover{color:#2ecc71}
-
-/* HERO */
-.hero{
-height:100vh;
+.logo{
 display:flex;
-flex-direction:column;
-justify-content:center;
 align-items:center;
-text-align:center;
-padding:20px;
-background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
-url('https://images.unsplash.com/photo-1556656793-08538906a9f8?q=80&w=1600&auto=format&fit=crop');
-background-size:cover;
-background-position:center;
+gap:10px;
 }
-.hero h1{
-font-size:2.7rem;
-font-weight:700;
-max-width:750px;
+.logo-box{
+background:#1ecb70;
+width:38px;
+height:38px;
+border-radius:10px;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:18px;
+color:#000;
 }
-.hero p{
-margin-top:15px;
-color:#ccc;
-max-width:550px;
-}
-.btn{
-display:inline-block;
-margin:20px 8px 0;
-padding:11px 26px;
-border-radius:30px;
-text-decoration:none;
-font-weight:500;
-transition:.3s;
-}
-.primary{
-background:#2ecc71;
-color:#111;
-}
-.primary:hover{opacity:.85}
-.secondary{
-border:1px solid #2ecc71;
-color:#2ecc71;
-}
-.secondary:hover{
-background:#2ecc71;
-color:#111;
-}
+.logo h2{font-size:18px;}
+.logo span{font-size:12px;color:#1ecb70;}
+.menu{font-size:22px;}
 
-/* SECTIONS */
-section{padding:80px 8%}
+/* SECTION */
+section{padding:40px 20px;}
 .section-title{
 text-align:center;
-font-size:1.8rem;
-margin-bottom:40px;
-color:#2ecc71;
+font-size:22px;
+margin-bottom:20px;
 }
+.green{color:#1ecb70}
+
+/* CARD */
 .card{
-background:#1a1a1a;
+background:linear-gradient(145deg,#0e2534,#081923);
+border-radius:18px;
 padding:25px;
-border-radius:12px;
+margin-bottom:25px;
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+}
+
+/* BUTTON */
+.btn{
+display:block;
+width:100%;
+padding:14px;
+border-radius:30px;
+text-align:center;
+text-decoration:none;
+font-weight:600;
+margin-top:15px;
 transition:.3s;
 }
-.card:hover{transform:translateY(-6px)}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:25px;
+.btn-green{
+background:linear-gradient(90deg,#19c463,#25e07b);
+color:#000;
 }
-.product img{
+.btn-green:hover{opacity:.85}
+
+/* MAP */
+.map{
 width:100%;
-border-radius:10px;
-margin-bottom:10px;
+border-radius:15px;
+overflow:hidden;
+margin-bottom:20px;
 }
+
+/* INFO BOX */
+.info-box{
+background:#0b1d29;
+border-radius:15px;
+padding:18px;
+margin-bottom:15px;
+}
+.info-box h4{
+margin-bottom:6px;
+color:#1ecb70;
+font-size:14px;
+}
+
+/* CONTACT CARDS */
+.contact-card{
+background:linear-gradient(135deg,#19c463,#0f7a43);
+border-radius:18px;
+padding:22px;
+margin-bottom:20px;
+color:#000;
+}
+.contact-card h3{margin-bottom:8px;}
 
 /* FOOTER */
 footer{
 background:#000;
-padding:30px 8%;
-text-align:center;
+padding:30px 20px;
 font-size:14px;
 color:#aaa;
+}
+.footer-links a{
+display:block;
+color:#aaa;
+text-decoration:none;
+margin:6px 0;
+}
+.footer-links a:hover{color:#1ecb70}
+.social{
+margin-top:20px;
+}
+.social span{
+display:inline-block;
+width:35px;
+height:35px;
+border-radius:8px;
+background:#111;
+margin-right:8px;
+line-height:35px;
+text-align:center;
+}
+.copyright{
+margin-top:20px;
+text-align:center;
+font-size:12px;
 }
 
 /* FLOATING WHATSAPP */
@@ -145,104 +147,122 @@ color:#aaa;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25D366;
-color:white;
 width:55px;
 height:55px;
 border-radius:50%;
+background:linear-gradient(135deg,#19c463,#0f7a43);
 display:flex;
-justify-content:center;
 align-items:center;
-font-size:22px;
+justify-content:center;
+font-size:24px;
+color:#000;
 text-decoration:none;
-box-shadow:0 4px 12px rgba(0,0,0,0.4);
+box-shadow:0 8px 25px rgba(0,0,0,.4);
+z-index:999;
 transition:.3s;
 }
-.whatsapp-float:hover{transform:scale(1.08)}
-
-@media(max-width:768px){
-.hero h1{font-size:1.9rem}
+.whatsapp-float:hover{
+transform:scale(1.08);
+opacity:.9;
 }
 </style>
 </head>
 
 <body>
 
-<!-- Loader -->
-<div id="loader">
-<div class="loader-dot"></div>
-</div>
-
 <header>
+<div class="logo">
+<div class="logo-box">📱</div>
+<div>
 <h2>Phone Zone</h2>
-<nav>
-<a href="#about">About</a>
-<a href="#products">Products</a>
-<a href="#contact">Contact</a>
-</nav>
+<span>Gaya, Bihar</span>
+</div>
+</div>
+<div class="menu">☰</div>
 </header>
 
-<div class="hero">
-<h1>Best Deals on Second Hand Smartphones in Gaya</h1>
-<p>Premium Quality Phones. Trusted Prices. Local Store You Can Rely On.</p>
-<div>
-<a href="tel:9162414178" class="btn primary">Call Now</a>
-<a href="https://www.google.com/maps/search/?api=1&query=Prem+Talkies+More+Gaya+Bihar" target="_blank" class="btn secondary">Get Directions</a>
-</div>
-</div>
-
-<section id="about">
-<h2 class="section-title">About Phone Zone</h2>
-<div class="card">
-<p>
-Phone Zone is a trusted second hand mobile shop in Gaya. We offer quality-checked smartphones at affordable prices with honest and friendly service.
-</p>
-</div>
-</section>
-
-<section id="products">
-<h2 class="section-title">Available Brands</h2>
-<div class="grid">
-<div class="card product">
-<img src="https://images.unsplash.com/photo-1603791440384-56cd371ee9a7?q=80&w=600">
-<h3>iPhone</h3>
-<p>Starting ₹9,999</p>
-</div>
-<div class="card product">
-<img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf?q=80&w=600">
-<h3>Samsung</h3>
-<p>Starting ₹6,999</p>
-</div>
-<div class="card product">
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505?q=80&w=600">
-<h3>Vivo</h3>
-<p>Starting ₹5,499</p>
-</div>
-</div>
-</section>
-
-<section id="contact">
-<h2 class="section-title">Visit Our Store Today</h2>
+<section>
 <div class="card" style="text-align:center;">
-<p>Prem Talkies More, Shaheed Road, Dulhingunj, Gaya, Bihar 823001</p>
-<p>Store Timings: 10AM – 9PM</p>
-<a href="tel:9162414178" class="btn primary">📞 Call Now</a>
-<a href="https://wa.me/919162414178" class="btn secondary">💬 WhatsApp</a>
+<h2>Have Questions? We're Here to Help!</h2>
+<p style="margin-top:10px;color:#ccc;font-size:14px;">
+Call or WhatsApp us for price details and availability.
+</p>
+
+<a href="tel:9162414178" class="btn btn-green">📞 Call Now</a>
+<a href="https://wa.me/919162414178" class="btn btn-green">💬 WhatsApp</a>
+</div>
+</section>
+
+<section>
+<h2 class="section-title">Visit <span class="green">Our Store</span> Today</h2>
+
+<div class="map">
+<iframe 
+src="https://www.google.com/maps?q=Prem+Talkies+More+Gaya+Bihar&output=embed" 
+width="100%" height="200" style="border:0;" allowfullscreen="">
+</iframe>
+</div>
+
+<div class="info-box">
+<h4>Our Address</h4>
+Prem Talkies More, Shaheed Road,<br>
+Dulhingunj, Gaya, Bihar 823001
+</div>
+
+<div class="info-box">
+<h4>Store Hours</h4>
+Mon-Sun: 10:00 AM – 9:00 PM
+</div>
+
+<a href="https://www.google.com/maps/search/?api=1&query=Prem+Talkies+More+Gaya+Bihar" class="btn btn-green">Get Directions →</a>
+</section>
+
+<section>
+<h2 class="section-title">Ready to Buy <span class="green">Your Phone?</span></h2>
+
+<div class="contact-card">
+<h3>Call Us Now</h3>
+<p>Speak directly with our team</p>
+<h2>91624 14178</h2>
+</div>
+
+<div class="contact-card">
+<h3>WhatsApp Us</h3>
+<p>Quick reply on WhatsApp</p>
+<h2>91624 14178</h2>
 </div>
 </section>
 
 <footer>
-© 2026 Phone Zone | Second Hand Mobile Shop in Gaya
+<h3>Phone Zone</h3>
+<p>Your trusted destination for premium quality second-hand smartphones in Gaya.</p>
+
+<div class="footer-links">
+<h4 style="margin-top:20px;">Quick Links</h4>
+<a href="#">Home</a>
+<a href="#">About Us</a>
+<a href="#">Products</a>
+<a href="#">Location</a>
+<a href="#">Contact</a>
+</div>
+
+<div class="social">
+<span>f</span>
+<span>📸</span>
+<span>🐦</span>
+</div>
+
+<div class="copyright">
+© 2026 Phone Zone. All rights reserved.
+</div>
 </footer>
 
-<a href="https://wa.me/919162414178" class="whatsapp-float" target="_blank">💬</a>
-
-<script>
-window.addEventListener("load", function(){
-document.getElementById("loader").style.opacity="0";
-setTimeout(()=>{document.getElementById("loader").style.display="none"},500);
-});
-</script>
+<!-- Floating WhatsApp Button -->
+<a href="https://wa.me/919162414178" 
+   class="whatsapp-float" 
+   target="_blank">
+   💬
+</a>
 
 </body>
 </html>
