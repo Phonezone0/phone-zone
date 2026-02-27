@@ -3,175 +3,214 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Phone Zone</title>
+<title>Phone Zone | Premium Second Hand Mobile Shop in Gaya</title>
+
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
-
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
 body{
-background:#000;
+background:#0a1620;
 color:#fff;
+overflow-x:hidden;
 }
+section{padding:80px 8%}
+h1,h2,h3{font-weight:600}
+p{color:#bbb;line-height:1.6}
 
 /* HEADER */
 header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 20px;
-background:#0d0d0d;
-position:sticky;
-top:0;
-z-index:1000;
-}
-
-.logo{
-font-size:20px;
-font-weight:600;
-color:#00ff99;
-}
-
-.hamburger{
-font-size:24px;
-cursor:pointer;
-}
-
-.nav{
 position:fixed;
 top:0;
-right:-100%;
-width:220px;
-height:100%;
-background:#111;
-padding:60px 20px;
-transition:.3s;
-}
-
-.nav.active{
-right:0;
-}
-
-.nav a{
-display:block;
-color:#fff;
-text-decoration:none;
-margin-bottom:20px;
-font-size:16px;
-}
-
-/* SECTION */
-.section{
-padding:20px;
-}
-
-/* PRODUCT CARD */
-.product-card{
-background:#111;
-border-radius:18px;
-overflow:hidden;
-margin-bottom:25px;
-box-shadow:0 8px 25px rgba(0,0,0,.6);
-transition:.3s;
-}
-
-.product-card:hover{
-transform:translateY(-5px);
-}
-
-.product-img{
-position:relative;
-height:220px;
-overflow:hidden;
-}
-
-.product-img img{
 width:100%;
-height:100%;
-object-fit:cover;
-}
-
-.brand-badge{
-position:absolute;
-top:12px;
-left:12px;
-background:#000;
-padding:5px 12px;
-border-radius:20px;
-font-size:12px;
-}
-
-.product-content{
-padding:18px;
-}
-
-.product-content h3{
-font-size:16px;
-margin-bottom:6px;
-font-weight:500;
-}
-
-.price{
-color:#00ff99;
-font-weight:600;
-margin:8px 0;
-}
-
-.product-footer{
 display:flex;
 justify-content:space-between;
 align-items:center;
+padding:18px 8%;
+background:rgba(10,22,32,.9);
+backdrop-filter:blur(10px);
+z-index:1000;
+border-bottom:1px solid rgba(255,255,255,.05);
 }
-
-.inquire-btn{
-background:#00cc66;
-border:none;
-padding:10px 18px;
-border-radius:25px;
-color:#000;
-font-weight:600;
-cursor:pointer;
+.logo{
+display:flex;
+align-items:center;
+gap:10px;
 }
-
-.arrow-circle{
-width:35px;
-height:35px;
-border-radius:50%;
-background:#00cc66;
+.logo-box{
+width:40px;height:40px;
+border-radius:12px;
+background:linear-gradient(135deg,#19c463,#0f7a43);
 display:flex;
 align-items:center;
 justify-content:center;
+color:#000;font-size:20px;
+}
+nav a{
+margin-left:25px;
+text-decoration:none;
+color:#ddd;
+font-size:14px;
+transition:.3s;
+}
+nav a:hover{color:#1ecb70}
+
+/* HERO */
+.hero{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:60px;
+background:linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=1600&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+}
+.hero h1{
+font-size:42px;
+max-width:800px;
+}
+.hero p{
+margin-top:15px;
+max-width:600px;
+}
+.btn{
+display:inline-block;
+padding:14px 32px;
+border-radius:40px;
+margin:20px 10px 0;
+text-decoration:none;
+font-weight:600;
+transition:.3s;
+}
+.btn-primary{
+background:linear-gradient(90deg,#19c463,#25e07b);
 color:#000;
-font-weight:bold;
+}
+.btn-primary:hover{transform:translateY(-3px)}
+.btn-outline{
+border:1px solid #1ecb70;
+color:#1ecb70;
+}
+.btn-outline:hover{
+background:#1ecb70;
+color:#000;
 }
 
-/* WHATSAPP */
-.whatsapp-float{
+/* RATING */
+.rating{
+margin-top:25px;
+font-size:14px;
+color:#1ecb70;
+}
+
+/* BRANDS */
+.brands{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
+gap:30px;
+text-align:center;
+margin-top:40px;
+}
+.brand-box{
+background:#111f2b;
+padding:30px;
+border-radius:18px;
+transition:.3s;
+}
+.brand-box:hover{
+transform:translateY(-8px);
+}
+
+/* FEATURES */
+.features{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+margin-top:50px;
+}
+.feature{
+background:#111f2b;
+padding:35px;
+border-radius:20px;
+transition:.3s;
+}
+.feature:hover{
+transform:translateY(-8px);
+}
+
+/* MAP */
+.map{
+border-radius:20px;
+overflow:hidden;
+margin-top:40px;
+}
+
+/* CTA */
+.cta{
+text-align:center;
+background:linear-gradient(135deg,#19c463,#0f7a43);
+color:#000;
+border-radius:25px;
+padding:60px 30px;
+margin-top:50px;
+}
+.cta h2{color:#000}
+
+/* FOOTER */
+footer{
+background:#081018;
+padding:60px 8%;
+margin-top:80px;
+}
+.footer-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:40px;
+}
+footer a{
+display:block;
+color:#aaa;
+text-decoration:none;
+margin:8px 0;
+}
+footer a:hover{color:#1ecb70}
+.copyright{
+margin-top:40px;
+text-align:center;
+font-size:13px;
+color:#666;
+}
+
+/* FLOATING WHATSAPP */
+.whatsapp{
 position:fixed;
-bottom:20px;
-right:20px;
-width:55px;
-height:55px;
+bottom:25px;
+right:25px;
+width:60px;
+height:60px;
 border-radius:50%;
 background:linear-gradient(135deg,#19c463,#0f7a43);
 display:flex;
 align-items:center;
 justify-content:center;
-font-size:24px;
+font-size:26px;
 color:#000;
 text-decoration:none;
-box-shadow:0 8px 25px rgba(0,0,0,.4);
-z-index:999;
-transition:.3s;
+box-shadow:0 10px 30px rgba(25,196,99,.4);
+animation:float 3s ease-in-out infinite;
+}
+@keyframes float{
+0%,100%{transform:translateY(0)}
+50%{transform:translateY(-6px)}
 }
 
-.whatsapp-float:hover{
-transform:scale(1.1);
+@media(max-width:768px){
+.hero h1{font-size:28px}
+section{padding:70px 6%}
 }
 </style>
 </head>
@@ -179,108 +218,100 @@ transform:scale(1.1);
 <body>
 
 <header>
-<div class="logo">Phone Zone</div>
-<div class="hamburger" onclick="toggleMenu()">☰</div>
+<div class="logo">
+<div class="logo-box">📱</div>
+<h2>Phone Zone</h2>
+</div>
+<nav>
+<a href="#brands">Brands</a>
+<a href="#features">Why Us</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+</nav>
 </header>
 
-<div class="nav" id="navMenu">
-<a href="#">Home</a>
-<a href="#">Products</a>
-<a href="#">About</a>
-<a href="#">Contact</a>
+<section class="hero">
+<h1>Premium Second-Hand Smartphones in Gaya</h1>
+<p>Certified quality phones at affordable prices. Trusted by hundreds of happy customers.</p>
+<div>
+<a href="tel:9162414178" class="btn btn-primary">Call Now</a>
+<a href="#location" class="btn btn-outline">Visit Store</a>
 </div>
-
-<section class="section">
-
-<!-- iPhone -->
-<div class="product-card">
-<div class="product-img">
-<span class="brand-badge">iPhone</span>
-<img src="https://images.unsplash.com/photo-1603899122950-07eab94f3c59">
-</div>
-<div class="product-content">
-<h3>Premium Apple devices</h3>
-<div class="price">₹15,000 – ₹1,00,000</div>
-<div class="product-footer">
-<button class="inquire-btn">Inquire Now</button>
-<div class="arrow-circle">→</div>
-</div>
-</div>
-</div>
-
-<!-- Samsung -->
-<div class="product-card">
-<div class="product-img">
-<span class="brand-badge">Samsung</span>
-<img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf">
-</div>
-<div class="product-content">
-<h3>Flagship 5G Phones</h3>
-<div class="price">₹8,000 – ₹50,000</div>
-<div class="product-footer">
-<button class="inquire-btn">Inquire Now</button>
-<div class="arrow-circle">→</div>
-</div>
-</div>
-</div>
-
-<!-- Vivo -->
-<div class="product-card">
-<div class="product-img">
-<span class="brand-badge">Vivo</span>
-<img src="https://images.unsplash.com/photo-1623126908029-58cb08a2b272">
-</div>
-<div class="product-content">
-<h3>Camera & performance phones</h3>
-<div class="price">₹6,000 – ₹35,000</div>
-<div class="product-footer">
-<button class="inquire-btn">Inquire Now</button>
-<div class="arrow-circle">→</div>
-</div>
-</div>
-</div>
-
-<!-- Oppo -->
-<div class="product-card">
-<div class="product-img">
-<span class="brand-badge">Oppo</span>
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505">
-</div>
-<div class="product-content">
-<h3>Stylish design phones</h3>
-<div class="price">₹7,000 – ₹40,000</div>
-<div class="product-footer">
-<button class="inquire-btn">Inquire Now</button>
-<div class="arrow-circle">→</div>
-</div>
-</div>
-</div>
-
-<!-- Realme -->
-<div class="product-card">
-<div class="product-img">
-<span class="brand-badge">Realme</span>
-<img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc">
-</div>
-<div class="product-content">
-<h3>Best value for money</h3>
-<div class="price">₹5,000 – ₹25,000</div>
-<div class="product-footer">
-<button class="inquire-btn">Inquire Now</button>
-<div class="arrow-circle">→</div>
-</div>
-</div>
-</div>
-
+<div class="rating">⭐ 4.9 Rating • 500+ Happy Customers</div>
 </section>
 
-<a href="https://wa.me/919162414178" class="whatsapp-float" target="_blank">💬</a>
+<section id="brands">
+<h2 style="text-align:center">Available Brands</h2>
+<div class="brands">
+<div class="brand-box">iPhone</div>
+<div class="brand-box">Samsung</div>
+<div class="brand-box">Vivo</div>
+<div class="brand-box">Oppo</div>
+<div class="brand-box">Realme</div>
+<div class="brand-box">OnePlus</div>
+</div>
+</section>
 
-<script>
-function toggleMenu(){
-document.getElementById("navMenu").classList.toggle("active");
-}
-</script>
+<section id="features">
+<h2 style="text-align:center">Why Choose Phone Zone?</h2>
+<div class="features">
+<div class="feature">
+<h3>✔ Quality Checked</h3>
+<p>Every device is fully tested before sale.</p>
+</div>
+<div class="feature">
+<h3>✔ Best Pricing</h3>
+<p>Affordable and transparent pricing guaranteed.</p>
+</div>
+<div class="feature">
+<h3>✔ Trusted Store</h3>
+<p>Located at Prem Talkies More, Gaya.</p>
+</div>
+</div>
+</section>
+
+<section id="location">
+<h2 style="text-align:center">Visit Our Store</h2>
+<div class="map">
+<iframe src="https://www.google.com/maps?q=Prem+Talkies+More+Gaya+Bihar&output=embed"
+width="100%" height="300" style="border:0;"></iframe>
+</div>
+</section>
+
+<section id="contact">
+<div class="cta">
+<h2>Ready to Buy Your Phone?</h2>
+<p>Call or WhatsApp us today for best deals.</p>
+<a href="tel:9162414178" class="btn btn-primary">📞 91624 14178</a>
+</div>
+</section>
+
+<footer>
+<div class="footer-grid">
+<div>
+<h3>Phone Zone</h3>
+<p>Trusted second-hand mobile shop in Gaya offering premium smartphones at best prices.</p>
+</div>
+<div>
+<h3>Quick Links</h3>
+<a href="#brands">Brands</a>
+<a href="#features">Why Us</a>
+<a href="#location">Location</a>
+<a href="#contact">Contact</a>
+</div>
+<div>
+<h3>Contact Info</h3>
+<p>Prem Talkies More, Shaheed Road, Dulhingunj, Gaya</p>
+<p>Mon-Sun: 10AM – 9PM</p>
+<p>📞 91624 14178</p>
+</div>
+</div>
+<div class="copyright">
+© 2026 Phone Zone. All Rights Reserved.
+</div>
+</footer>
+
+<a href="https://wa.me/919162414178" class="whatsapp" target="_blank">💬</a>
 
 </body>
 </html>
