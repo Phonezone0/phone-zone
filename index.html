@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Phone Zone | Premium Smartphones in Gaya</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
 <style>
@@ -41,8 +41,8 @@ display:flex;
 justify-content:space-between;
 align-items:center;
 padding:20px 0;
-position:relative;
 z-index:1001;
+position:relative;
 }
 
 .logo{
@@ -63,7 +63,7 @@ font-size:26px;
 cursor:pointer;
 }
 
-/* MOBILE MENU */
+/* MENU */
 nav{
 position:fixed;
 top:0;
@@ -76,16 +76,13 @@ transition:.4s;
 z-index:1000;
 }
 
-nav.active{
-right:0;
-}
+nav.active{ right:0; }
 
 nav a{
 display:block;
 color:#fff;
 text-decoration:none;
 margin:20px 0;
-font-weight:500;
 }
 
 .overlay{
@@ -120,29 +117,19 @@ url('https://images.unsplash.com/photo-1511707171634-5f897ff02aa9') center/cover
 .hero h1{
 font-size:38px;
 font-weight:800;
-line-height:1.3;
 }
 
-.hero span{
-color:var(--green);
-}
-
-.hero p{
-margin-top:15px;
-opacity:.9;
-}
+.hero span{ color:var(--green); }
 
 .btn{
 display:inline-flex;
 align-items:center;
-justify-content:center;
 gap:8px;
 padding:14px 28px;
 border-radius:50px;
 font-weight:600;
 text-decoration:none;
 margin:20px 10px 0;
-transition:.3s;
 }
 
 .btn-green{
@@ -157,9 +144,7 @@ color:var(--green);
 }
 
 /* SECTIONS */
-section{
-padding:80px 0;
-}
+section{ padding:80px 0; }
 
 .section-title{
 text-align:center;
@@ -171,9 +156,7 @@ font-size:30px;
 font-weight:800;
 }
 
-.section-title span{
-color:var(--green);
-}
+.section-title span{ color:var(--green); }
 
 .grid{
 display:grid;
@@ -185,11 +168,6 @@ grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
 background:var(--card);
 padding:25px;
 border-radius:20px;
-transition:.3s;
-}
-
-.card:hover{
-transform:translateY(-5px);
 }
 
 .card img{
@@ -200,15 +178,12 @@ border-radius:15px;
 margin-bottom:15px;
 }
 
-/* WHY CHOOSE */
-.icon-box{
-text-align:center;
-}
-
-.icon-box i{
-font-size:30px;
-color:var(--green);
-margin-bottom:15px;
+/* MAP */
+.map-container iframe{
+width:100%;
+height:300px;
+border-radius:20px;
+border:none;
 }
 
 /* FOOTER */
@@ -219,7 +194,7 @@ text-align:center;
 opacity:.7;
 }
 
-/* WHATSAPP FLOAT */
+/* FLOAT WHATSAPP */
 .whatsapp-float{
 position:fixed;
 bottom:20px;
@@ -233,7 +208,6 @@ align-items:center;
 justify-content:center;
 color:#fff;
 font-size:28px;
-box-shadow:0 8px 20px rgba(0,0,0,.4);
 z-index:1002;
 text-decoration:none;
 }
@@ -258,9 +232,8 @@ text-decoration:none;
 
 <nav id="menu">
 <a href="#home" onclick="closeMenu()">Home</a>
-<a href="#about" onclick="closeMenu()">About</a>
 <a href="#products" onclick="closeMenu()">Products</a>
-<a href="#why" onclick="closeMenu()">Why Choose Us</a>
+<a href="#location" onclick="closeMenu()">Location</a>
 <a href="#contact" onclick="closeMenu()">Contact</a>
 </nav>
 
@@ -268,21 +241,8 @@ text-decoration:none;
 <section class="hero" id="home">
 <div>
 <h1>Best Deals on <span>Second Hand Smartphones</span> in Gaya</h1>
-<p>Premium Quality Phones. Honest Pricing. Trusted Local Store.</p>
-<a href="tel:9162414178" class="btn btn-green"><i class="fa fa-phone"></i> Call Now</a>
-<a href="https://wa.me/919162414178" target="_blank" class="btn btn-dark">WhatsApp Us</a>
-</div>
-</section>
-
-<!-- ABOUT -->
-<section id="about">
-<div class="container">
-<div class="section-title">
-<h2>Your Trusted <span>Mobile Shop</span></h2>
-</div>
-<p style="text-align:center;max-width:700px;margin:auto;opacity:.8;">
-At Phone Zone, we specialize in certified second-hand smartphones with warranty assurance and honest pricing.
-</p>
+<a href="tel:9162414178" class="btn btn-green">Call Now</a>
+<a href="https://wa.me/919162414178" class="btn btn-dark" target="_blank">WhatsApp</a>
 </div>
 </section>
 
@@ -295,55 +255,43 @@ At Phone Zone, we specialize in certified second-hand smartphones with warranty 
 
 <div class="grid">
 <div class="card">
-<img src="https://images.unsplash.com/photo-1603899122881-0d9b5d6bfe44" alt="">
+<img src="images/iphone.jpg" alt="iPhone">
 <h4>Apple iPhones</h4>
 <p>₹15,000 - ₹70,000</p>
-<a href="https://wa.me/919162414178" class="btn btn-green" target="_blank">Inquire</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1580910051074-3eb694886505" alt="">
+<img src="images/samsung.jpg" alt="Samsung">
 <h4>Samsung Galaxy</h4>
 <p>₹18,000 - ₹50,000</p>
-<a href="https://wa.me/919162414178" class="btn btn-green" target="_blank">Inquire</a>
 </div>
 
 <div class="card">
-<img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97" alt="">
+<img src="images/vivo.jpg" alt="Vivo">
 <h4>Vivo & Oppo</h4>
 <p>₹10,000 - ₹30,000</p>
-<a href="https://wa.me/919162414178" class="btn btn-green" target="_blank">Inquire</a>
 </div>
 </div>
 </div>
 </section>
 
-<!-- WHY CHOOSE -->
-<section id="why">
+<!-- LOCATION SECTION -->
+<section id="location">
 <div class="container">
 <div class="section-title">
-<h2>Why <span>Choose Us</span></h2>
+<h2>Our <span>Location</span></h2>
 </div>
 
-<div class="grid">
-<div class="card icon-box">
-<i class="fa fa-check-circle"></i>
-<h4>Verified Devices</h4>
-<p>All phones tested for quality performance.</p>
+<div class="map-container">
+<iframe src="https://maps.google.com/maps?q=Prem%20Talkies%20More%20Gaya&t=&z=15&ie=UTF8&iwloc=&output=embed"></iframe>
 </div>
 
-<div class="card icon-box">
-<i class="fa fa-tags"></i>
-<h4>Budget Friendly</h4>
-<p>Best prices in Gaya market.</p>
+<div style="text-align:center;margin-top:25px;">
+<a href="https://www.google.com/maps/place/Prem+Talkies+More+Gaya" target="_blank" class="btn btn-green">
+<i class="fa fa-location-arrow"></i> Open in Google Maps
+</a>
 </div>
 
-<div class="card icon-box">
-<i class="fa fa-store"></i>
-<h4>Physical Store</h4>
-<p>Visit us anytime for direct purchase.</p>
-</div>
-</div>
 </div>
 </section>
 
@@ -356,10 +304,8 @@ At Phone Zone, we specialize in certified second-hand smartphones with warranty 
 
 <div class="card" style="text-align:center;">
 <p><strong>Phone:</strong> 9162414178</p>
-<p><strong>Location:</strong> Prem Talkies More, Gaya</p>
 <p><strong>Timing:</strong> 10AM - 9PM</p>
 <a href="tel:9162414178" class="btn btn-green">Call Now</a>
-<a href="https://wa.me/919162414178" class="btn btn-dark" target="_blank">WhatsApp</a>
 </div>
 </div>
 </section>
